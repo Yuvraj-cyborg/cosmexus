@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function SpaceViewport() {
   return (
     <section className="relative py-16 md:py-24 bg-black text-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="mb-6 flex items-center justify-between text-[11px] font-mono text-white/60">
-          <div>EARTH-PROTECTION • X-3</div>
+          <div>Bayronik - 0.0.1</div>
           <div>Cosmexus</div>
           <div>JOIN-THE-PROGRAM</div>
         </div>
@@ -16,7 +18,13 @@ export default function SpaceViewport() {
               ))}
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_#2b6aa420_0%,_transparent_60%)]" />
+              {/*<div className="w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_#2b6aa420_0%,_transparent_60%)]" />*/}
+              <Image
+                src="/results.jpg"
+                alt="Cosmexus Logo"
+                width={1020}
+                height={1020}
+              />
             </div>
             <div className="absolute inset-x-0 bottom-0 h-10 border-t border-white/10" />
           </div>
@@ -31,5 +39,3 @@ export default function SpaceViewport() {
     </section>
   );
 }
-
-
