@@ -5,7 +5,7 @@ export default function SpaceViewport() {
     <section className="relative py-16 md:py-24 bg-black text-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="mb-6 flex items-center justify-between text-[11px] font-mono text-white/60">
-          <div>Bayronik - 0.0.1</div>
+          <div>Bayronik - 0.1.0</div>
           <div>Cosmexus</div>
           <div>JOIN-THE-PROGRAM</div>
         </div>
