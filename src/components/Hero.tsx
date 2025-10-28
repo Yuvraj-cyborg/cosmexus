@@ -20,14 +20,14 @@ export default function Hero() {
       const desiredWidth = Math.floor(cssWidth * dpr);
       const desiredHeight = Math.floor(cssHeight * dpr);
 
-      const MAX_DIM = 16384; 
+      const MAX_DIM = 16384;
       const MAX_AREA = 16777216; // ~16MP safe area cap
 
       const scaleFactor = Math.min(
         1,
         MAX_DIM / Math.max(desiredWidth, 1),
         MAX_DIM / Math.max(desiredHeight, 1),
-        Math.sqrt(MAX_AREA / Math.max(desiredWidth * desiredHeight, 1))
+        Math.sqrt(MAX_AREA / Math.max(desiredWidth * desiredHeight, 1)),
       );
 
       const effectiveDpr = dpr * scaleFactor;
@@ -92,7 +92,14 @@ export default function Hero() {
       }
 
       // Black-hole like radial gradient at the right focal point
-      const g = ctx.createRadialGradient(anchorX, anchorY, 0, anchorX, anchorY, 260);
+      const g = ctx.createRadialGradient(
+        anchorX,
+        anchorY,
+        0,
+        anchorX,
+        anchorY,
+        260,
+      );
       g.addColorStop(0, "rgba(0,0,0,1)");
       g.addColorStop(0.15, "rgba(10,10,18,0.95)");
       g.addColorStop(0.3, "rgba(203,133,92,0.18)");
@@ -164,15 +171,16 @@ export default function Hero() {
         STATUS • EXPEDITION-02
       </div>
 
-
       <div className="w-full max-w-4xl relative z-10">
         <div className="space-y-6 text-left">
-          <div className="text-xs font-mono text-muted-foreground tracking-widest">&gt; COSMEXUS.INIT</div>
+          <div className="text-xs font-mono text-muted-foreground tracking-widest">
+            &gt; COSMEXUS
+          </div>
           <h1 className="text-5xl md:text-7xl font-mono font-extrabold text-foreground leading-[1.05] tracking-tight max-w-2xl">
             BEYOND REALMS
           </h1>
           <p className="text-sm md:text-base text-muted-foreground font-mono max-w-xl leading-relaxed">
-            Exploring infinite frontiers through innovation and cosmic discovery.
+            Exploring multiverse through innovation and cosmic discovery.
           </p>
         </div>
       </div>
