@@ -1,14 +1,18 @@
 import Hero from "@/components/Hero";
-import DashboardSection from "@/components/DashboardSection";
-import SpaceViewport from "@/components/SpaceViewport";
+import AboutSection from "@/components/AboutSection";
+import MissionSection from "@/components/MissionSection";
 import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
-      <DashboardSection />
-      <SpaceViewport />
+      <div id="about">
+        <AboutSection />
+      </div>
+      <div id="mission">
+        <MissionSection />
+      </div>
       <Footer />
     </main>
   );
