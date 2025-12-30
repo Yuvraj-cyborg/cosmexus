@@ -20,308 +20,164 @@ export default function BayronikPage() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 px-6 md:px-12 py-12 max-w-6xl mx-auto">
+      <div className="relative z-10 px-6 md:px-16 lg:px-24 py-12 max-w-6xl">
         
-        {/* Title block */}
-        <div className="border border-border p-6 md:p-8 mb-12">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 bg-border" />
-            <div className="text-[10px] font-mono text-muted-foreground">HIGH-FIDELITY BARYONIC FIELD EMULATOR</div>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl font-mono font-bold text-foreground tracking-tight text-center mb-4">
-            BAYRONIK
+        {/* Title section - left aligned, minimal */}
+        <div className="mb-16">
+          <h1 className="text-3xl md:text-4xl font-mono font-bold text-foreground tracking-tight mb-4">
+            Bayronik
           </h1>
           
-          <p className="text-sm font-mono text-muted-foreground text-center max-w-2xl mx-auto">
-            An AI-powered computational framework that predicts baryonic corrections in milliseconds, 
-            replacing months of supercomputer time with instant inference on standard hardware.
+          <p className="text-lg font-sans text-foreground leading-relaxed max-w-3xl mb-6">
+            Making supercomputer simulations obsolete. Bayronik uses AI to predict baryonic effects on cosmic structure turning 3 months of compute time into 50 milliseconds.
           </p>
+
+          {/* Backed by badge */}
+          <div className="inline-flex items-center">
+            <div className="flex items-center border-l-2 border-foreground/20 pl-4">
+              <span className="text-[15px] font-mono text-muted-foreground tracking-[0.1em] uppercase">Backed by</span>
+              <Image
+                src="/merge.png"
+                alt="Merge"
+                width={140}
+                height={45}
+                className="h-11 w-auto"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Results visualization - lazy loaded */}
         <div className="mb-16">
-          <div className="flex items-center justify-between mb-4">
-            <div className="text-[10px] font-mono text-muted-foreground">FIG. 01 — SIMULATION OUTPUT</div>
-            <div className="text-[10px] font-mono text-muted-foreground">2D MASS DENSITY MAP</div>
+          <div className="text-xs font-mono text-muted-foreground mb-3">Simulation Output</div>
+          
+          <div className="relative aspect-square md:aspect-[16/10] overflow-hidden bg-foreground/5">
+            <Image
+              src="/results.jpg"
+              alt="Bayronik simulation results - 2D mass density map showing baryonic field distribution"
+              fill
+              className="object-cover"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDAwUBAAAAAAAAAAAAAQIDAAQRBRIhBhMiMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQACAwEAAAAAAAAAAAAAAAABAgADESH/2gAMAwEAAhEDEEQA/wCMdO6kudNsLi1htbRopgA+9WJXByOOeOKKKNUAYFhLMrYn/9k="
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+            />
           </div>
           
-          <div className="border border-border p-2 bg-background">
-            <div className="relative aspect-square md:aspect-[16/10] overflow-hidden">
-              <Image
-                src="/results.jpg"
-                alt="Bayronik simulation results - 2D mass density map showing baryonic field distribution"
-                fill
-                className="object-cover"
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDAwUBAAAAAAAAAAAAAQIDAAQRBRIhBhMiMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQACAwEAAAAAAAAAAAAAAAABAgADESH/2gAMAwEAAhEDEEQA/wCMdO6sudNsLi1htbRopgA+9WJXByOOeOKKKNUAYFhLMrYn/9k="
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
-              />
-              {/* Corner markers */}
-              <div className="absolute top-2 left-2 w-4 h-4 border-l border-t border-foreground/40" />
-              <div className="absolute top-2 right-2 w-4 h-4 border-r border-t border-foreground/40" />
-              <div className="absolute bottom-2 left-2 w-4 h-4 border-l border-b border-foreground/40" />
-              <div className="absolute bottom-2 right-2 w-4 h-4 border-r border-b border-foreground/40" />
-            </div>
-          </div>
-          
-          <div className="flex items-center justify-between mt-2">
-            <div className="text-[9px] font-mono text-muted-foreground/60">SCALE: 256×256 px</div>
-            <div className="text-[9px] font-mono text-muted-foreground/60">FORMAT: MASS DENSITY Σ</div>
-          </div>
+          <div className="text-xs font-mono text-muted-foreground mt-2">2D Mass Density Map (256×256)</div>
         </div>
 
-        {/* Problem & Solution Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* Problem & Solution */}
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* The Problem */}
-          <div className="border border-border p-6">
-            <div className="text-xs font-mono text-muted-foreground mb-3">❯ THE PROBLEM</div>
-            <h3 className="text-lg font-mono font-bold text-foreground mb-3">The Baryonic Bias</h3>
-            <p className="text-sm font-mono text-muted-foreground leading-relaxed mb-4">
-              Precision cosmology relies on weak gravitational lensing. But &quot;baryonic physics&quot;—supernova 
-              explosions and AGN feedback—violently redistribute matter, biasing our measurements of 
-              Dark Matter density (Ω<sub>m</sub>) and cosmic clumpiness (σ<sub>8</sub>).
+          <div>
+            <h2 className="text-lg font-mono font-bold text-foreground mb-4">The Problem</h2>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed mb-4">
+              Dark matter research is broken. Baryonic effects—supernovae and black hole feedback—corrupt our cosmic measurements.
             </p>
-            <div className="border-t border-border pt-4">
-              <div className="text-[10px] font-mono text-muted-foreground mb-2">CURRENT SOLUTION</div>
-              <p className="text-xs font-mono text-foreground">
-                Full hydrodynamic simulations → Months on supercomputers
-              </p>
-            </div>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed">
+              Running the simulations to fix this takes <span className="font-semibold text-foreground">months on a supercomputer</span>.
+            </p>
           </div>
 
           {/* The Solution */}
-          <div className="border border-border p-6">
-            <div className="text-xs font-mono text-muted-foreground mb-3">❯ THE SOLUTION</div>
-            <h3 className="text-lg font-mono font-bold text-foreground mb-3">AI-Powered Emulation</h3>
-            <p className="text-sm font-mono text-muted-foreground leading-relaxed mb-4">
-              Bayronik learns the mapping function F that transforms cheap gravity-only simulations 
-              into hydrodynamic fidelity:
+          <div>
+            <h2 className="text-lg font-mono font-bold text-foreground mb-4">Our Approach</h2>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed mb-4">
+              We trained a deep neural network on 1,000+ hydrodynamic simulations from the CAMELS suite.
             </p>
-            <div className="bg-foreground/5 border border-border p-3 font-mono text-sm text-center mb-4">
-              Hydro Map ≈ Gravity-Only Map + F(Gravity-Only Map)
-            </div>
-            <div className="border-t border-border pt-4">
-              <div className="text-[10px] font-mono text-muted-foreground mb-2">BAYRONIK SOLUTION</div>
-              <p className="text-xs font-mono text-foreground">
-                AI inference → Milliseconds on a laptop
-              </p>
-            </div>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed">
+              Now it runs in <span className="font-semibold text-foreground">50ms on a laptop</span>. Same physics, 1,000,000× faster.
+            </p>
           </div>
         </div>
 
         {/* Technical Architecture */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-border" />
-            <h2 className="text-xl font-mono font-bold text-foreground">TECHNICAL ARCHITECTURE</h2>
-            <div className="h-px flex-1 bg-border" />
-          </div>
+          <h2 className="text-lg font-mono font-bold text-foreground mb-8">The Stack</h2>
           
-          <div className="text-xs font-mono text-muted-foreground text-center mb-8">
-            The &quot;Rust-Sandwich&quot; — Hybrid architecture balancing training flexibility with inference performance
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Physics Engine */}
-            <div className="border border-border p-5">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 border border-foreground/30 flex items-center justify-center font-mono text-xs">A</div>
-                <div>
-                  <div className="text-sm font-mono font-bold text-foreground">bayronik-core</div>
-                  <div className="text-[10px] font-mono text-muted-foreground">RUST</div>
-                </div>
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <span className="text-sm font-mono font-bold text-muted-foreground w-8">01</span>
+              <div>
+                <div className="text-base font-mono font-semibold text-foreground mb-1">bayronik-core <span className="text-muted-foreground font-normal">/ Rust</span></div>
+                <p className="text-sm font-sans text-muted-foreground">N-body physics engine with FFT Poisson solver. Runs gravity-only simulations from cosmological initial conditions.</p>
               </div>
-              <div className="text-xs font-mono text-muted-foreground mb-3">PHYSICS ENGINE</div>
-              <ul className="space-y-2 text-xs font-mono text-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Particle-Mesh (PM) N-body simulator</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Zel&apos;dovich Approximation init</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>KDK leapfrog integrator</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>FFT-based Poisson solver</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Cloud-in-Cell (CIC) projection</span>
-                </li>
-              </ul>
             </div>
 
-            {/* AI Brain */}
-            <div className="border border-border p-5">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 border border-foreground/30 flex items-center justify-center font-mono text-xs">B</div>
-                <div>
-                  <div className="text-sm font-mono font-bold text-foreground">bayronik-model</div>
-                  <div className="text-[10px] font-mono text-muted-foreground">PYTHON / PYTORCH</div>
-                </div>
+            <div className="flex items-start gap-4">
+              <span className="text-sm font-mono font-bold text-muted-foreground w-8">02</span>
+              <div>
+                <div className="text-base font-mono font-semibold text-foreground mb-1">bayronik-model <span className="text-muted-foreground font-normal">/ PyTorch</span></div>
+                <p className="text-sm font-sans text-muted-foreground">Deep U-Net trained on CAMELS hydrodynamic simulations. Predicts baryonic corrections as residual fields.</p>
               </div>
-              <div className="text-xs font-mono text-muted-foreground mb-3">AI BRAIN</div>
-              <ul className="space-y-2 text-xs font-mono text-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Deep U-Net (Encoder-Decoder)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Residual learning strategy</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>CAMELS LH training suite</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Memory-mapped data pipeline</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>T4 GPU cloud training</span>
-                </li>
-              </ul>
             </div>
 
-            {/* Inference Engine */}
-            <div className="border border-border p-5">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 border border-foreground/30 flex items-center justify-center font-mono text-xs">C</div>
-                <div>
-                  <div className="text-sm font-mono font-bold text-foreground">bayronik-infer</div>
-                  <div className="text-[10px] font-mono text-muted-foreground">RUST</div>
-                </div>
+            <div className="flex items-start gap-4">
+              <span className="text-sm font-mono font-bold text-muted-foreground w-8">03</span>
+              <div>
+                <div className="text-base font-mono font-semibold text-foreground mb-1">bayronik-infer <span className="text-muted-foreground font-normal">/ Rust</span></div>
+                <p className="text-sm font-sans text-muted-foreground">User-facing CLI with interactive TUI. Renders 256² density fields in terminal using Braille characters.</p>
               </div>
-              <div className="text-xs font-mono text-muted-foreground mb-3">INFERENCE ENGINE</div>
-              <ul className="space-y-2 text-xs font-mono text-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>tch-rs LibTorch bindings</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>TorchScript model loading</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Interactive TUI interface</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Braille heatmap renderer</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-muted-foreground">→</span>
-                  <span>Closed-loop generation</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
 
-        {/* Specifications */}
+        {/* Key Innovations */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-border" />
-            <h2 className="text-xl font-mono font-bold text-foreground">SPECIFICATIONS</h2>
-            <div className="h-px flex-1 bg-border" />
-          </div>
+          <h2 className="text-lg font-mono font-bold text-foreground mb-6">What Makes It Work</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="border border-border p-4 text-center">
-              <div className="text-2xl font-mono font-bold text-foreground mb-1">~ms</div>
-              <div className="text-[10px] font-mono text-muted-foreground">INFERENCE TIME</div>
-            </div>
-            <div className="border border-border p-4 text-center">
-              <div className="text-2xl font-mono font-bold text-foreground mb-1">1000+</div>
-              <div className="text-[10px] font-mono text-muted-foreground">TRAINING SIMS</div>
-            </div>
-            <div className="border border-border p-4 text-center">
-              <div className="text-2xl font-mono font-bold text-foreground mb-1">256²</div>
-              <div className="text-[10px] font-mono text-muted-foreground">OUTPUT RESOLUTION</div>
-            </div>
-            <div className="border border-border p-4 text-center">
-              <div className="text-2xl font-mono font-bold text-foreground mb-1">TB+</div>
-              <div className="text-[10px] font-mono text-muted-foreground">DATASET SIZE</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Key Features */}
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-border" />
-            <h2 className="text-xl font-mono font-bold text-foreground">KEY THEORIES</h2>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border-l-2 border-foreground/20 pl-4">
-              <div className="text-xs font-mono text-muted-foreground mb-1">01</div>
-              <div className="text-sm font-mono font-bold text-foreground mb-2">Residual Learning</div>
-              <p className="text-xs font-mono text-muted-foreground">
-                The model predicts the residual difference between gravity-only and hydro maps, 
-                acting as a &quot;physics leash&quot; that prevents hallucinations and respects underlying dark matter structure.
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-base font-mono font-semibold text-foreground mb-2">Residual Learning</h3>
+              <p className="text-sm font-sans text-muted-foreground">
+                Predicts the delta between gravity-only and hydro simulations—preventing hallucinations while respecting dark matter structure.
               </p>
             </div>
-            <div className="border-l-2 border-foreground/20 pl-4">
-              <div className="text-xs font-mono text-muted-foreground mb-1">02</div>
-              <div className="text-sm font-mono font-bold text-foreground mb-2">Zel&apos;dovich Initialization</div>
-              <p className="text-xs font-mono text-muted-foreground">
-                Instead of random noise, generates displacement vectors via Inverse FFT from cosmological 
-                Power Spectrum P(k), ensuring physically accurate initial clustering and velocity flows.
+            <div>
+              <h3 className="text-base font-mono font-semibold text-foreground mb-2">Cosmological IC</h3>
+              <p className="text-sm font-sans text-muted-foreground">
+                Zel&apos;dovich initialization from power spectrum P(k) ensures physically accurate initial conditions.
               </p>
             </div>
-            <div className="border-l-2 border-foreground/20 pl-4">
-              <div className="text-xs font-mono text-muted-foreground mb-1">03</div>
-              <div className="text-sm font-mono font-bold text-foreground mb-2">Memory-Mapped Training</div>
-              <p className="text-xs font-mono text-muted-foreground">
-                Custom cloud-to-cloud ETL pipeline (Flatiron → Colab → Drive) with numpy.memmap 
-                to stream multi-terabyte datasets on a single T4 GPU.
+            <div>
+              <h3 className="text-base font-mono font-semibold text-foreground mb-2">Memory-Mapped I/O</h3>
+              <p className="text-sm font-sans text-muted-foreground">
+                Streams terabyte-scale simulation data on a single T4 GPU. Trained on free-tier Colab.
               </p>
             </div>
-            <div className="border-l-2 border-foreground/20 pl-4">
-              <div className="text-xs font-mono text-muted-foreground mb-1">04</div>
-              <div className="text-sm font-mono font-bold text-foreground mb-2">Braille Visualization</div>
-              <p className="text-xs font-mono text-muted-foreground">
-                Custom terminal renderer using Braille Unicode characters to display high-fidelity 
-                256² density fields directly in the CLI with minimal overhead.
+            <div>
+              <h3 className="text-base font-mono font-semibold text-foreground mb-2">Terminal Viz</h3>
+              <p className="text-sm font-sans text-muted-foreground">
+                Braille-character renderer displays 256² density maps directly in the CLI. No GUI required.
               </p>
             </div>
           </div>
         </div>
 
         {/* Status */}
-        <div className="border border-border p-6 text-center">
-          <div className="text-xs font-mono text-muted-foreground mb-2">PROJECT STATUS</div>
-          <div className="text-lg font-mono font-bold text-foreground mb-4">IN ACTIVE DEVELOPMENT</div>
-          <div className="flex justify-center gap-4">
-            <Link 
-              href="/"
-              className="px-5 py-2 border border-foreground/30 rounded text-xs font-mono text-foreground hover:border-foreground/60 transition-colors"
-            >
-              ← BACK TO HOME
-            </Link>
-          </div>
+        <div className="py-8">
+          <div className="text-sm font-mono text-muted-foreground mb-3">PROJECT STATUS</div>
+          <div className="text-lg font-mono font-bold text-foreground mb-6">IN ACTIVE DEVELOPMENT</div>
         </div>
       </div>
 
+      {/* Centered back navigation */}
+      <div className="relative z-20 flex justify-center py-8">
+        <Link 
+          href="/"
+          className="text-xs font-mono text-foreground hover:text-muted-foreground transition-colors"
+        >
+          ← BACK TO HOME
+        </Link>
+      </div>
+
       {/* Bottom annotations */}
-      <div className="relative z-20 px-8 py-6">
+      <div className="relative z-20 px-8 py-8">
         <div className="flex justify-between text-[9px] font-mono text-muted-foreground/60">
           <div>
             <div>DRAWING NO: CSX-BYR-001</div>
-            <div>DATE: 2025.12.25</div>
+            <div>DATE: 2025.12.31</div>
           </div>
           <div className="text-right">
             <div>REF: CAMELS-LH</div>
